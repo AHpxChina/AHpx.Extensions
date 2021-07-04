@@ -1,4 +1,5 @@
 ﻿using System;
+using AHpx.Extensions.StringExtensions;
 
 namespace AHpx.Extensions.Test
 {
@@ -6,7 +7,9 @@ namespace AHpx.Extensions.Test
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World!".IsNotNullOrEmpty());
+            Console.WriteLine("".IsNotNullOrEmpty());
+            Console.WriteLine(" ".IsNullOrEmpty());
         }
     }
 }

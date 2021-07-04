@@ -1,0 +1,13 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\ahpx\AppData\Local\JetBrains\Rider2021.1\resharper-host\temp\Rider\vAny\CoverageData\_AHpx.Extensions.547232732\Snapshot\snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=baab5676_002D2fb1_002D4851_002D8b0a_002D16994ed8c0e1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ReturnReserveValueOfEmptyOrNull" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::F81AF471-B62C-43A5-8740-8FFBDB49D69B::net5.0::AHpx.Extensions.UnitTest.StringFilterShould&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d33d2fe3_002D125b_002D48aa_002D9e5c_002D145945b88537/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="BeTrueIfNullOrEmpty" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e44acd9f_002D435c_002D4a6b_002Dbb1e_002D8cf554257d92/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from StringFilterShould.cs" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;ProjectFile&gt;F81AF471-B62C-43A5-8740-8FFBDB49D69B/f:StringFilterShould.cs&lt;/ProjectFile&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
