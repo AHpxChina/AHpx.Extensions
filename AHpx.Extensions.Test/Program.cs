@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using AHpx.Extensions.StringExtensions;
+using Newtonsoft.Json;
 
 namespace AHpx.Extensions.Test
 {
@@ -7,7 +9,7 @@ namespace AHpx.Extensions.Test
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("".IsNotNullOrEmptyThrow(new Exception("This is a custom exception")));
+            
         }
     }
 }

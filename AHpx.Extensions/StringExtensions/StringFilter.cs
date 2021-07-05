@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace AHpx.Extensions.StringExtensions
 {
@@ -52,5 +55,42 @@ namespace AHpx.Extensions.StringExtensions
         /// <param name="s"></param>
         /// <returns></returns>
         public static bool IsNotInteger(this string s) => !s.IsInteger();
+
+        /// <summary>
+        /// Determine if a string is a json string (JObject or JArray)
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static bool IsJsonString(this string s)
+        {
+            if (s.IsNullOrEmpty())
+            {
+                return false;
+            }
+            
+            s = s.Trim();
+            if (s.StartsWith("{") && s.EndsWith("}") || //For object
+                s.StartsWith("[") && s.EndsWith("]")) //For array
+            {
+                try
+                {
+                    var obj = JToken.Parse(s);
+                    return true;
+                }
+                catch //some other exception
+                {
+                    return false;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Determine if a string is not a json string (JObject or JArray)
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static bool IsNotJsonString(this string s) => !s.IsJsonString();
     }
 }
