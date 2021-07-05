@@ -55,5 +55,39 @@ namespace AHpx.Extensions.JsonExtensions
 
             return token is JObject;
         }
+
+        /// <summary>
+        /// Determine if a string is a JObject or not
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        public static bool IsJObject(this JToken token)
+        {
+            return token is JObject;
+        }
+
+        /// <summary>
+        /// Determine if a string is a JArray or not
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static bool IsJArray(this string s)
+        {
+            s = s.IsJsonStringOrThrow();
+
+            var token = JToken.Parse(s);
+
+            return token is JArray;
+        }
+
+        /// <summary>
+        /// Determine if a string is a JArray or not
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        public static bool IsJArray(this JToken token)
+        {
+            return token is JArray;
+        }
     }
 }

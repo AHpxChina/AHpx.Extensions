@@ -25,7 +25,7 @@ namespace AHpx.Extensions.Test
                 }
             }.ToJsonString();
 
-            Console.WriteLine(mycls.FetchJToken("A3.B2").Type);
+            Console.WriteLine(mycls.FetchJToken("A3.B2").IsJObjectOrThrow());
         }
     }
     
