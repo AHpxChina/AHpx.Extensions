@@ -1,4 +1,5 @@
 ﻿using System;
+using AHpx.Extensions.JsonExtensions;
 
 namespace AHpx.Extensions.StringExtensions
 {
@@ -63,29 +64,6 @@ namespace AHpx.Extensions.StringExtensions
             return s.IsNotNullOrEmptyThrow(new Exception(exception.IsNullOrEmpty()
                 ? "Incoming parameter is not an integer!"
                 : exception));
-        }
-
-        /// <summary>
-        /// Determine if a string is a json string or throw exception
-        /// </summary>
-        /// <param name="s"></param>
-        /// <param name="exception"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
-        public static string IsJsonStringOrThrow(this string s, Exception exception)
-        {
-            return s.IsJsonString() ? s : throw exception;
-        }
-
-        /// <summary>
-        /// Determine if a string is a json string or throw exception
-        /// </summary>
-        /// <param name="s"></param>
-        /// <param name="exception">Exception message</param>
-        /// <returns></returns>
-        public static string IsJsonStringOrThrow(this string s, string exception = null)
-        {
-            return s.IsJsonStringOrThrow(new Exception(exception.IsNullOrEmpty() ? "Not a valid json!" : exception));
         }
     }
 }
