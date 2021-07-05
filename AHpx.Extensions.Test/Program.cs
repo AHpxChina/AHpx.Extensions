@@ -12,9 +12,10 @@ namespace AHpx.Extensions.Test
     {
         private static async Task Main(string[] args)
         {
-            var filePath = new FileInfo(@"C:\Users\ahpx\Desktop\test.txt");
+            var filePath = new DirectoryInfo(@"C:\Users\ahpx\Desktop");
 
-            await filePath.WriteAllTextAsync("awkjdajwhd", false);
+            Console.WriteLine(filePath.GetSubFile("text.txt"));
+            Console.WriteLine(filePath.GetSubDirectory("Hypixel").Exists);
         }
     }
     

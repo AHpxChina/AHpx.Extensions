@@ -9,5 +9,10 @@ namespace AHpx.Extensions.IOExtensions
         {
             return new($"{info.FullName.TrimEnd(Path.DirectorySeparatorChar)}/{path}".ConstructPath());
         }
+
+        public static FileInfo GetSubFile(this DirectoryInfo info, string path)
+        {
+            return new($"{info.FullName.TrimEnd(Path.DirectorySeparatorChar)}/{path}".ConstructPath());
+        }
     }
 }
