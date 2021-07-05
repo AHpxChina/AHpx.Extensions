@@ -7,9 +7,7 @@ namespace AHpx.Extensions.Test
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!".IsNotNullOrEmpty());
-            Console.WriteLine("".IsNotNullOrEmpty());
-            Console.WriteLine(" ".IsNullOrEmpty());
+            Console.WriteLine("".IsNotNullOrEmptyThrow(new Exception("This is a custom exception")));
         }
     }
 }

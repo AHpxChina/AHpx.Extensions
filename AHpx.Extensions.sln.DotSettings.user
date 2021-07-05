@@ -5,9 +5,9 @@
     &lt;TestId&gt;xUnit::F81AF471-B62C-43A5-8740-8FFBDB49D69B::net5.0::AHpx.Extensions.UnitTest.StringFilterShould&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d33d2fe3_002D125b_002D48aa_002D9e5c_002D145945b88537/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="BeTrueIfNullOrEmpty" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d33d2fe3_002D125b_002D48aa_002D9e5c_002D145945b88537/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="BeTrueIfNullOrEmpty" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e44acd9f_002D435c_002D4a6b_002Dbb1e_002D8cf554257d92/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from StringFilterShould.cs" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e44acd9f_002D435c_002D4a6b_002Dbb1e_002D8cf554257d92/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from StringFilterShould.cs" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;ProjectFile&gt;F81AF471-B62C-43A5-8740-8FFBDB49D69B/f:StringFilterShould.cs&lt;/ProjectFile&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
