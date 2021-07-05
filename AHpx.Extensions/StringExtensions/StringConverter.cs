@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using AHpx.Extensions.JsonExtensions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -39,6 +40,17 @@ namespace AHpx.Extensions.StringExtensions
             {
                 throw new Exception("Incoming Type parameter can't be serialize to json", e);
             }
+        }
+
+        /// <summary>
+        /// Construct certain path for the current operating system
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="separator"></param>
+        /// <returns></returns>
+        public static string ConstructPath(this string s, char separator = '/')
+        {
+            return s.Replace('/', Path.DirectorySeparatorChar);
         }
     }
 }
