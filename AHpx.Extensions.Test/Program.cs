@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using AHpx.Extensions.IOExtensions;
 using AHpx.Extensions.JsonExtensions;
 using AHpx.Extensions.StringExtensions;
@@ -12,15 +14,21 @@ namespace AHpx.Extensions.Test
 {
     internal static class Program
     {
-        private static void Main(string[] args)
+        private static async Task Main(string[] args)
         {
-            Console.WriteLine(ProcessUtilities.IsProcessRunning("javaw"));
-            Console.WriteLine(ProcessUtilities.IsProcessRunning("qq"));
+            var response = await HttpUtilities.PostJsonAsync("https://httpbin.org/post", new
+            {
+                Test = "awd"
+            }.ToJsonString(), new[]
+            {
+                ("AHpx", "zax"),
+                ("AHpxx", "aax"),
+                ("Content-Type", "application/yaml")
+            });
+
+            var content = await response.FetchContent();
+
+            Console.WriteLine(content);
         }
-    }
-    
-    class MyClass
-    {
-        public string Name { get; set; }
     }
 }
