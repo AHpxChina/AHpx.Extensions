@@ -3,6 +3,14 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>latest</LangVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Ahpx's personal tookit</Title>
+        <Description>Encapsuled some useful extension methods</Description>
+        <Copyright>© 2021 AHpx.</Copyright>
+        <PackageProjectUrl>https://github.com/AHpxChina/AHpx.Extensions</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/AHpxChina/AHpx.Extensions/blob/master/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/AHpxChina/AHpx.Extensions</RepositoryUrl>
+        <PackageTags>Toolkit, Extensions, Common</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
