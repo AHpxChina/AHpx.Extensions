@@ -52,5 +52,25 @@ namespace AHpx.Extensions.StringExtensions
         {
             return s.Replace('/', Path.DirectorySeparatorChar);
         }
+
+        /// <summary>
+        /// Convert string to int
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static int ToInt32(this string s)
+        {
+            return int.Parse(s);
+        }
+
+        /// <summary>
+        /// Convert string to long
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static long ToInt64(this string s)
+        {
+            return long.Parse(s);
+        }
     }
 }
