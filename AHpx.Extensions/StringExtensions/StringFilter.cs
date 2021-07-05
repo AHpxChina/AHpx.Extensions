@@ -37,24 +37,6 @@ namespace AHpx.Extensions.StringExtensions
         }
 
         /// <summary>
-        /// Determine if a string is empty, throw an exception if it is empty or null,
-        /// otherwise return the string
-        /// </summary>
-        /// <param name="s"></param>
-        /// <param name="exception"></param>
-        /// <param name="checkWhitespace"></param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentNullException"></exception>
-        public static string IsNotNullOrEmptyThrow(this string s, Exception exception = null, bool checkWhitespace = true)
-        {
-            var result = s.IsNotNullOrEmpty(checkWhitespace);
-
-            return result
-                ? s
-                : throw (exception ?? new ArgumentNullException($"Parameter {nameof(s)} is null or empty!"));
-        }
-        
-        /// <summary>
         /// Determine if a string is a integer
         /// </summary>
         /// <param name="s"></param>
@@ -63,5 +45,12 @@ namespace AHpx.Extensions.StringExtensions
         {
             return long.TryParse(s, out _);
         }
+
+        /// <summary>
+        /// Determine if a string is not a integer
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static bool IsNotInteger(this string s) => !s.IsInteger();
     }
 }
