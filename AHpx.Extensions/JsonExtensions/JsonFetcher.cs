@@ -16,7 +16,7 @@ namespace AHpx.Extensions.JsonExtensions
         {
             if (path.IsNullOrEmpty())
             {
-                throw new Exception("Path of json can't be null or empty!");
+                throw new Exception($"Path {path} of json can't be null or empty!");
             }
             
             if (s.IsNullOrEmpty())
@@ -28,7 +28,7 @@ namespace AHpx.Extensions.JsonExtensions
             {
                 if (JToken.Parse(s) is JObject obj)
                 {
-                    return obj.SelectToken(path) ?? throw new Exception("Incoming path doesn't exist!");
+                    return obj.SelectToken(path) ?? throw new Exception($"Path {path} doesn't exist!");
                 }
 
                 throw new Exception("JArray can't be fetch as a JObject!");

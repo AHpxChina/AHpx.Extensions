@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -16,19 +18,16 @@ namespace AHpx.Extensions.Test
     {
         private static async Task Main(string[] args)
         {
-            var response = await HttpUtilities.PostJsonAsync("https://httpbin.org/post", new
+            var client = new HttpClient();
+            var request = new HttpRequestMessage(HttpMethod.Get, "https://httpbin.org/get")
             {
-                Test = "awd"
-            }.ToJsonString(), new[]
-            {
-                ("AHpx", "zax"),
-                ("AHpxx", "aax"),
-                ("Content-Type", "application/yaml")
-            });
+                Content = new StringContent("", Encoding.Default, "application/json")
+            };
 
-            var content = await response.FetchContent();
 
-            Console.WriteLine(content);
+            var rs = await client.SendAsync(request);
+
+            Console.WriteLine(await rs.Content.ReadAsStringAsync());
         }
     }
 }

@@ -18,7 +18,20 @@ namespace AHpx.Extensions.StringExtensions
             s = s.IsNotNullOrEmptyThrow("A null or empty string can't be convert to json!")
                 .IsJsonStringOrThrow("Incoming string is not a valid json string!");
             
-            return JObject.Parse(s);
+            return s.IsJObjectOrThrow();
+        }
+
+        /// <summary>
+        /// Convert a string to JArray. Exception will be occurred if it not. 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static JArray ToJArray(this string s)
+        {
+            s = s.IsNotNullOrEmptyThrow("A null or empty string can't be convert to json!")
+                .IsJsonStringOrThrow("Incoming string is not a valid json string!");
+            
+            return s.IsJArrayOrThrow();
         }
 
         /// <summary>

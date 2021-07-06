@@ -26,7 +26,7 @@ namespace AHpx.Extensions.JsonExtensions
         /// <returns></returns>
         public static string IsJsonStringOrThrow(this string s, string exception = null)
         {
-            return s.IsJsonStringOrThrow(new Exception(exception.IsNullOrEmpty() ? "Not a valid json!" : exception));
+            return s.IsJsonStringOrThrow(new Exception(exception.IsNullOrEmpty() ? $"{s} is not a valid json!" : exception));
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace AHpx.Extensions.JsonExtensions
         /// <returns></returns>
         public static JObject IsJObjectOrThrow(this string s, string exception = null)
         {
-            return s.IsJObjectOrThrow(new Exception(exception.IsNullOrEmpty() ? "Not a valid JObject!" : exception));
+            return s.IsJObjectOrThrow(new Exception(exception.IsNullOrEmpty() ? $"{s} is not a valid JObject!" : exception));
         }
 
         public static JArray IsJArrayOrThrow(this string s, Exception exception)
@@ -65,7 +65,7 @@ namespace AHpx.Extensions.JsonExtensions
         /// <returns></returns>
         public static JArray IsJArrayOrThrow(this string s, string exception = null)
         {
-            return s.IsJArrayOrThrow(new Exception(exception.IsNullOrEmpty() ? "Not a valid JArray!" : exception));
+            return s.IsJArrayOrThrow(new Exception(exception.IsNullOrEmpty() ? $"{s} valid JArray!" : exception));
         }
         
         /// <summary>
@@ -88,7 +88,7 @@ namespace AHpx.Extensions.JsonExtensions
         /// <returns></returns>
         public static JObject IsJObjectOrThrow(this JToken s, string exception = null)
         {
-            return s.IsJObjectOrThrow(new Exception(exception.IsNullOrEmpty() ? "Not a valid JObject!" : exception));
+            return s.IsJObjectOrThrow(new Exception(exception.IsNullOrEmpty() ? $"{s} a valid JObject!" : exception));
         }
 
         public static JArray IsJArrayOrThrow(this JToken s, Exception exception)
@@ -104,7 +104,7 @@ namespace AHpx.Extensions.JsonExtensions
         /// <returns></returns>
         public static JArray IsJArrayOrThrow(this JToken s, string exception = null)
         {
-            return s.IsJArrayOrThrow(new Exception(exception.IsNullOrEmpty() ? "Not a valid JArray!" : exception));
+            return s.IsJArrayOrThrow(new Exception(exception.IsNullOrEmpty() ? $"{s} a valid JArray!" : exception));
         }
     }
 }

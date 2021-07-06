@@ -49,7 +49,7 @@ namespace AHpx.Extensions.StringExtensions
         {
             return s.IsInteger()
                 ? s
-                : throw (exception ?? new ArgumentException("Incoming parameter is not an integer!"));
+                : throw (exception ?? new ArgumentException($"{s} is not an integer!"));
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace AHpx.Extensions.StringExtensions
         public static string IsIntegerOrThrow(this string s, string exception = null)
         {
             return s.IsNotNullOrEmptyThrow(new Exception(exception.IsNullOrEmpty()
-                ? "Incoming parameter is not an integer!"
+                ? $"{s} is not an integer!"
                 : exception));
         }
     }
