@@ -18,16 +18,16 @@ namespace AHpx.Extensions.Test
     {
         private static async Task Main(string[] args)
         {
-            var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Get, "https://httpbin.org/get")
-            {
-                Content = new StringContent("", Encoding.Default, "application/json")
-            };
+            var url = new StringBuilder("https://login.live.com/oauth20_token.srf");
+            url.Append("?client_id=00000000402b5328&");
+            url.Append($"code=M.R3_BAY.ae002e00-c64a-c85f-6e21-7ea5ef72ebb9&");
+            url.Append("grant_type=authorization_code&");
+            url.Append("redirect_uri=https://login.live.com/oauth20_desktop.srf&");
+            url.Append("scope=service::user.auth.xboxlive.com::MBI_SSL&");
 
+            var response = await HttpUtilities.GetAsync(url.ToString(), "application/x-www-form-urlencoded");
 
-            var rs = await client.SendAsync(request);
-
-            Console.WriteLine(await rs.Content.ReadAsStringAsync());
+            Console.WriteLine(await response.FetchContent());
         }
     }
 }

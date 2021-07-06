@@ -39,31 +39,27 @@ namespace AHpx.Extensions.Utils
         {
             using var client = new HttpClient();
             client.DefaultRequestHeaders.Add("User-Agent", UserAgent);
-            
-            var response = await client.GetAsync(url);
+
+            using var request = new HttpRequestMessage(HttpMethod.Get, url)
+            {
+                Content = new StringContent("", Encoding.Default, contentType)
+            };
+
+            var response = await client.SendAsync(request);
             response.EnsureSuccessStatusCode();
-            response.Content.Headers.ContentType = new MediaTypeHeaderValue(contentType);
 
             return response;
         }
 
         /// <summary>
-        /// Send a GET request with custom headers
+        /// Send a GET request with custom request headers
         /// </summary>
         /// <param name="url"></param>
-        /// <param name="headers">Content-Type is available to add!</param>
+        /// <param name="headers"></param>
         /// <returns></returns>
         public static async Task<HttpResponseMessage> GetAsync(string url, IEnumerable<(string, string)> headers)
         {
-            (string, string)? contentType = null;
             var valueTuples = headers.ToList();
-            
-            if (valueTuples.Any(x => x.Item1 == "Content-Type"))
-            {
-                contentType = valueTuples.Single(x => x.Item1 == "Content-Type");
-
-                valueTuples.Remove(contentType.Value);
-            }
 
             using var client = new HttpClient();
             client.DefaultRequestHeaders.Add("User-Agent", UserAgent);
@@ -75,11 +71,6 @@ namespace AHpx.Extensions.Utils
 
             var response = await client.GetAsync(url);
             response.EnsureSuccessStatusCode();
-
-            if (contentType.HasValue)
-            {
-                response.Content.Headers.ContentType = new MediaTypeHeaderValue(contentType.Value.Item2);
-            }
 
             return response;
         }
@@ -127,20 +118,12 @@ namespace AHpx.Extensions.Utils
         /// </summary>
         /// <param name="url"></param>
         /// <param name="json"></param>
-        /// <param name="headers">Custom headers, Content-Type is available!</param>
+        /// <param name="headers">Custom request headers</param>
         /// <returns></returns>
         public static async Task<HttpResponseMessage> PostJsonAsync(string url, string json, IEnumerable<(string, string)> headers)
         {
-            (string, string)? contentType = null;
             var valueTuples = headers.ToList();
             
-            if (valueTuples.Any(x => x.Item1 == "Content-Type"))
-            {
-                contentType = valueTuples.Single(x => x.Item1 == "Content-Type");
-
-                valueTuples.Remove(contentType.Value);
-            }
-
             using var client = new HttpClient();
             client.DefaultRequestHeaders.Add("User-Agent", UserAgent);
             
@@ -149,14 +132,24 @@ namespace AHpx.Extensions.Utils
                 client.DefaultRequestHeaders.Add(valueTuple.Item1, valueTuple.Item2);
             }
 
-            var content = new StringContent(json, Encoding.Default);
-
-            if (contentType.HasValue)
-            {
-                content.Headers.ContentType = new MediaTypeHeaderValue(contentType.Value.Item2);
-            }
-
+            var content = new StringContent(json, Encoding.Default , "application/json");
+            
             var response = await client.PostAsync(url, content);
+            response.EnsureSuccessStatusCode();
+
+            return response;
+        }
+
+        /// <summary>
+        /// Send a custom request
+        /// </summary>
+        /// <param name="requestMessage"></param>
+        /// <returns></returns>
+        public static async Task<HttpResponseMessage> SendAsync(HttpRequestMessage requestMessage)
+        {
+            using var client = new HttpClient();
+
+            var response = await client.SendAsync(requestMessage);
             response.EnsureSuccessStatusCode();
 
             return response;
