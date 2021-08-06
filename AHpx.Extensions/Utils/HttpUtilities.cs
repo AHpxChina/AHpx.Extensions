@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -9,6 +10,7 @@ using AHpx.Extensions.StringExtensions;
 
 namespace AHpx.Extensions.Utils
 {
+    [Obsolete("use Flurl instead of this")]
     public static class HttpUtilities
     {
         private static readonly string UserAgent = $"AHpxExtensions/{ReflectionUtilities.GetAssemblyVersion()}";
